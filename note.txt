@@ -1,0 +1,569 @@
+1- npx create-react-app "nom de l'app en miniscule(my-app ou my_app)"
+2- npm init react-app "nom de l'app"
+3- cd "nom de l'app"
+4- code .
+5- npm start
+6- ERROR :
+        Cannot find module 'ajv/dist/compile/codegen'
+        Require stack:
+        - C:\Users\PC\Desktop\la-maison-jungle\node_modules\ajv-keywords\dist\definitions\typeof.js
+        - C:\Users\PC\Desktop\la-maison-jungle\node_modules\ajv-keywords\dist\keywords\typeof.js
+        - C:\Users\PC\Desktop\la-maison-jungle\node_modules\ajv-keywords\dist\keywords\index.js
+        - C:\Users\PC\Desktop\la-maison-jungle\node_modules\ajv-keywords\dist\index.js
+        - C:\Users\PC\Desktop\la-maison-jungle\node_modules\schema-utils\dist\validate.js
+        - C:\Users\PC\Desktop\la-maison-jungle\node_modules\schema-utils\dist\index.js
+        - C:\Users\PC\Desktop\la-maison-jungle\node_modules\webpack-dev-server\lib\Server.js
+        - C:\Users\PC\Desktop\la-maison-jungle\node_modules\react-scripts\scripts\start.js
+    voici ce qu'il faut faire :
+
+    L'erreur que vous rencontrez indique qu'il manque le module ajv/dist/compile/codegen, et cela est probablement dû à une incompatibilité de version entre les modules ajv et ajv-keywords. Voici les étapes à suivre pour résoudre ce problème :
+
+        1. Vérifier les versions de ajv et ajv-keywords
+        Assurez-vous que les versions de ajv et ajv-keywords que vous utilisez sont compatibles. Si vous utilisez ajv version 7 ou plus, vous devrez peut-être mettre à jour les dépendances.
+
+        Exécutez la commande suivante pour vérifier les versions installées :
+
+        bash
+        Copy code
+       *** npm list ajv ajv-keywords
+        Si ajv est en version 7 ou plus, assurez-vous que ajv-keywords est également à jour.
+
+        2. Mettre à jour ou installer les dépendances manquantes
+        Mettez à jour ajv et ajv-keywords avec les dernières versions compatibles :
+
+        bash
+        Copy code
+       *** npm install ajv@latest ajv-keywords@latest
+        3. Réinstaller les modules Node
+        Il est possible que l'installation des dépendances soit corrompue. Supprimez le dossier node_modules et réinstallez les dépendances :
+
+        bash
+        Copy code
+       *** rm -rf node_modules
+       *** npm install
+        4. Vérifier la compatibilité avec schema-utils
+        Si la mise à jour d'ajv et ajv-keywords ne résout pas le problème, vérifiez si la version de schema-utils est compatible avec celle de ajv. Vous pouvez vérifier la version de schema-utils avec :
+
+        bash
+        Copy code
+       *** npm list schema-utils
+        Mettez à jour schema-utils si nécessaire :
+
+        bash
+        Copy code
+        *** npm install schema-utils@latest
+        5. Nettoyer le cache npm
+        Parfois, nettoyer le cache de npm peut résoudre des problèmes liés aux dépendances :
+
+        bash
+        Copy code
+        *** npm cache clean --force
+        Une fois que vous avez essayé ces étapes, relancez votre serveur de développement pour voir si l'erreur est corrigée.
+
+
+        //*********************************** Revision *****************************************
+
+        ****************************************** I  ******************************************
+        Comprendre le fonctionnement de React
+Question 1
+Parmi les éléments de cette liste, lesquels sont des frameworks ou bibliothèques JavaScript ?
+
+Attention, plusieurs réponses sont possibles.
+
+Angular
+
+VueJS
+
+React
+
+PHP
+Ici vous avez des frameworks JavaScript et un langage de programmation qui n'a rien à voir : PHP. L'intrus est donc bien PHP ici.
+
+Question 2
+Pour transformer un fichier HTML en app React sur CodePen, les bonnes pratiques consistent à :
+
+Attention, plusieurs réponses sont possibles.
+
+déclarer dans le HTML où l'app React vivra, par exemple avec un className.
+
+importer les liens CDN React et ReactDOM.
+
+attacher l'app React au HTML avec ReactDOM.render(<MonApp />, document.getElementById( 'monId')).
+
+paramétrer Babel.
+Pour transformer un fichier HTML en app React sur CodePen, il faut importer les liens CDN pour React et ReactDOM, que l'on peut trouver dans la documentation de React.
+
+De la même manière, pour coder au mieux, on doit utiliser Babel.
+
+Ensuite, il faut ancrer l'app React au HTML avec ReactDOM.render, mais pour ça on a besoin de lui préciser où s'attacher. Une bonne solution est d'utiliser un id. Mais un className, même si ce n'est pas une bonne manière de faire, pourrait fonctionner.
+
+Il fallait donc sélectionner les réponses 2, 3 et 4.
+
+Question 3
+Quels sont les atouts de React ?
+
+Attention, plusieurs réponses sont possibles.
+
+Toutes les librairies nécessaires pour un nouveau projet sont fournies d'emblée.
+
+React est particulièrement modulaire.
+
+Sa syntaxe en JSX est très efficace à utiliser.
+
+React est largement utilisé, sa maîtrise permet donc de bénéficier de nombreuses opportunités professionnelles.
+Chaque langage a ses atouts et ses inconvénients. On peut compter parmi les atouts de React : 
+
+sa modularité, qui permet de choisir les bons outils en fonction du projet à développer ;
+les opportunités professionnelles que React offre ;
+sa syntaxe, créée par les équipes de React, le JSX, qui réunit la structure, le style et les interactions, est très efficace. 
+En revanche, du fait de la modularité de React, il faut souvent se poser la question des outils qui seront utilisés pour développer son projet. 
+
+Les bonnes réponses sont donc les 2, 3 et 4 !
+
+Question 4
+React est un excellent outil pour :
+
+
+créer des bases de données.
+
+construire une interface utilisateur à partir de composants réutilisables.
+
+créer un algorithme de machine learning.
+
+créer le design d'une maquette.
+React est une technologie frontend : elle permet de coder en composants afin de créer une interface utilisateur. Les technologies énumérées ici en options 1 et 3 requièrent davantage des langages backend. La dernière option, quant à elle, correspond davantage à du design qu'à du code. Il s'agit donc de la réponse 2.
+
+Question 5
+J'ai créé un composant :
+
+function MyHeader() {
+    return <div>Whaou 🤩</div>
+}
+Je le réutilise dans le code ci-dessous :
+
+ReactDOM.render(< myHeader><div>So much wow</div>, document.getElementById('root'))
+Rien ne s'affiche 😭 et mon CodePen m'indique qu'il y a des erreurs. Qu'est-ce qui se passe ?
+
+Attention, plusieurs réponses sont possibles.
+
+Le nom d'un composant doit commencer par une majuscule.
+
+Les composants doivent toujours être wrappés par un seul composant parent.
+
+La balise de MyHeader n'est pas fermée par un /.
+
+Un composant ne peut pas être utilisé dans un autre composant.
+Plusieurs choses posent problème ici. 
+
+Certaines règles sont à respecter en JSX : 
+
+- le nom d'un composant doit commencer par une majuscule ;
+
+- les composants doivent toujours être wrappés par un seul composant parent ;
+
+- les balises doivent toujours être fermées.
+
+Il fallait donc choisir les réponses 1, 2 et 3.
+
+Il aurait fallu utiliser le composant de la manière suivante pour que cela fonctionne :
+
+ReactDOM.render(<div>< MyHeader /><div>So much wow</div></div>, document.getElementById('root'))
+
+Question 6
+Parmi les snippets de code ci-dessous, lesquels permettent de déclarer un composant React ?
+
+Attention, plusieurs réponses sont possibles.
+
+const MyComponent = () => (<div>Hello World</div>)
+
+function MyComponent() { return (<div>Hello World</div>)}
+
+class MyComponent extends React.Component {render() {return <div>Hello World</div>}}
+
+const MyComponent = React.create('div', {}, 'Hello World')
+Il existe plusieurs syntaxes pour déclarer un composant.
+Un composant peut être déclaré à l'aide d'une fonction. Dans ce cas, la syntaxe de fonction fléchée ou de fonction sont toutes les deux possibles. Il est également possible d’utiliser une classe avec la syntaxe :
+
+class MyComponent extends React.Component {render() {return <div>Hello World</div>}}
+Même si elle n’est quasiment jamais utilisée directement, la syntaxe createElement  permet de déclarer un composant React. Sauf qu'ici, si vous regardez bien, on n'a pas utilisé createElement  , mais juste create  ... qui n'existe pas. Les bonnes réponses étaient donc la 1, la 2 et la 3. 
+
+Question 7
+J’ai implémenté un nouveau composant :
+
+function Subtitle() {
+    const myText = “Achetez toutes les plantes dont vous avez toujours rêvé”
+    return <div>myText</div>
+}
+Mais aucune trace de mon texte. À la place, je me retrouve avec écrit “myText” à l’écran. Qu’est-ce qui se passe 🤔 ?
+
+
+Le composant n'est pas bien exporté.
+
+Il n’est pas possible d’afficher des strings directement dans un composant.
+
+JSX ne permet pas d'évaluer du JavaScript directement.
+
+Il n’y a pas d’accolades.
+En React, ce sont les accolades qui permettent d’évaluer et afficher du JavaScript directement dans le JSX. Ici, il aurait donc fallu écrire :  {myText}  pour que ça fonctionne. La bonne réponse était donc la dernière réponse.
+
+Question 8
+La notation entre accolades {}  peut être utilisée dans le JSX pour :
+
+Attention, plusieurs réponses sont possibles.
+
+Afficher une variable texte ou un nombre.
+
+Déclarer une variable.
+
+Évaluer une expression JS permettant de faire un calcul de maths.
+
+Écrire du HTML.
+La notation entre accolades, utilisée en React, permet :
+
+d’afficher une variable texte ou nombre directement dans un composant ;
+d’évaluer une expression JavaScript pour faire un calcul de maths.
+Les bonnes réponses étaient donc la 1 et la 3.
+
+        ****************************************** II ******************************************
+        Question 1
+Create React App est un outil qui sert à :
+
+
+créer une base de code avec des outils préconfigurés.
+
+installer React Router.
+
+écrire du code.
+
+styliser une application node.
+Create React App est une boîte à outils permettant d'initialiser une base de code avec tous les outils nécessaires au développement tels que Webpack, Babel et ESLint, déjà préconfigurés.
+
+Question 2
+La base de code que nous avons initialisée contient un certain nombre de fichiers. Le fichier  package.json   a une importance particulière puisqu'il permet de :
+
+Attention, plusieurs réponses sont possibles.
+
+Gérer les dépendances.
+
+Gérer les scripts.
+
+Importer les fichiers nécessaires.
+
+Connecter React au  index.html  .
+
+Lancer les tests automatisés.
+
+Lancer le build de l’application.
+
+Générer un fichier HTML unique.
+
+Transformer votre code JavaScript en PHP.
+Le fichier  package.json   permet de gérer les dépendances de votre projet, et de lister les scripts qui peuvent être exécutés avec  yarn   (entre autres). Ça permet notamment de lancer les tests automatisés avec  yarn test   ou de lancer le build de votre application avec  yarn build  .
+
+En revanche, il n'importe pas de fichier. Dans Create React App, c'est Webpack qui importe nos fichiers, et qui génère un fichier HTML unique.
+
+Pour ce qui concerne le fait d'intégrer React dans le fichier HTML, c'est le fichier  index.js   qui s'en charge. Ici, pas de PHP, donc la dernière option ne fonctionnait pas.
+
+Question 3
+Vous avez un tableau de strings pour vos catégories de plantes comme ci-dessous :
+
+const categories = ["plantes d'ombre", "cactus", "plantes d'extérieur", "plantes pour débutants", "plantes fleuries"]
+Quel snippet de code en JSX vous permet de créer un composant qui génère facilement et proprement une liste d'éléments React ? Attention, le code ne doit produire aucune erreur dans la console !
+
+
+<ul>
+    {categories.map(category => <li>
+    {category}
+    </li>;)}
+</ul>
+ 
+
+<ul>
+    {categories.map((category, index) => <li key={`${category}-${index}`}>
+    {category}
+    </li>;)}
+</ul>
+ 
+
+<ul>
+    <li>plantes d'ombre</li>
+    <li>cactus</li>
+    <li>plantes d'extérieur</li>
+    <li>plantes pour débutants</li>
+    <li>plantes fleuries</li>
+</ul>
+ 
+
+<ul>
+    {categories.filter(category => category.length > 0)}
+</ul>
+ 
+
+ const i = 0
+    while(i < categories.length) {
+        ++i
+        return <li>{categories[i]}</li>
+    }
+ }
+La meilleure manière de générer une liste d'éléments React à partir d'un tableau est d'utiliser la méthode  map()   permettant d'appliquer une fonction à chaque élément de notre tableau, puis de retourner un nouveau tableau. Ensuite, il faut lui passer une prop  key  .
+
+La réponse 1 pourrait sembler correcte, mais la prop  key   a été oubliée 🙈. 
+
+La réponse 3, quant à elle, n'utilise pas du tout les principes de React. Elle se contente de dupliquer le contenu, ce qui ne correspond pas du tout à ce que nous avons appris ensemble.
+
+Ici,  filter()   n'est pas utile et ne retourne de toute manière pas d'élément JSX : l'option 4 ne fonctionne pas non plus.
+
+La proposition 5 utilise une boucle while – il s'agit ici d'une instruction. Or, en JSX, nous utilisons des expressions. Cela ne fonctionne pas du tout.
+
+La bonne réponse était donc la 2. 
+
+Question 4
+Parmi les phrases de cette liste, laquelle est fausse ?
+
+
+Une prop est toujours passée par un composant enfant à son parent.
+
+Une prop est considérée en lecture seule dans le composant qui la reçoit.
+
+Les props nous permettent de configurer nos composants.
+
+Une prop est toujours passée par un composant parent à son enfant.
+Comme nous l’avons vu, on peut configurer nos composants grâce aux props. Elles sont passées par un composant parent à son enfant, et considérées en lecture seule. Les affirmations 2, 3 et 4 sont vraies.
+
+La logique de React est descendante, les données descendent des composants parents vers les composants enfants. Il fallait donc choisir l'affirmation 1 qui est donc fausse.
+
+Question 5
+Vous créez un composant Layout pour votre application, que vous pourrez réutiliser si vous créez de nouvelles pages. Votre composant doit venir wrapper votre contenu, mais il ne connaît pas le contenu à l'avance. Dans le parent, vous l'écrivez de la manière suivante :
+
+<Layout>
+    <h1>Les plantes sont nos amies</h1>
+    <h2>Monstera</h2>
+    <p>Facile à entretenir, le monstera saura embellir votre intérieur ✨</p>
+<Layout>
+Comment pouvez-vous écrire votre composant Layout ?
+
+Attention, plusieurs réponses sont possibles.
+
+function Layout({child}) {
+    return <div className="my-layout">{children}</div>
+}
+
+function Layout(children) {
+    return <div className="my-layout">{children}</div>
+}
+
+function Layout({children}) {
+    return <div className="my-layout">{children}</div>
+}
+
+function Layout(props) {
+    const children = props.children
+    return <div className="my-layout">{children}</div>
+}
+La prop children est particulièrement utile quand un composant ne connaît pas ses enfants à l'avance. Elle est renseignée en imbriquant les enfants dans le parent : <Parent><Child /></Parent>, et on la récupère avec la prop  children  . 
+
+L'option 1 utilise la prop  child   qui ne permet pas de récupérer le contenu de votre composant ci-dessus. Elle n'est donc pas une réponse valide.
+
+L'option 2 utilise bien le mot clé  children  , sauf que le paramètre que l'on récupère dans la fonction Layout correspond à l'objet  props  . Le code de l'option 2 produit une erreur parce qu'on essaie de render un objet entier.
+
+L'option 3 déstructure directement children dans les paramètres, alors que l'option 4 utilise props pour ensuite récupérer children – mais il s'agit bien de deux syntaxes valides. Les bonnes réponses sont donc la 3 et la 4. 🎉
+
+Question 6
+Dans votre bannière, vous rajoutez un élément React de rempotage : en fonction du mois de l'année, vous affichez ou non "Nous sommes au Printemps : c'est le moment idéal pour rempoter !". Vous avez déjà récupéré le mois de l'année dans la variable  month  .
+
+Quelle(s) syntaxe(s) vous permet(tent) d'afficher le conseil uniquement pendant le printemps ?
+
+Attention, plusieurs réponses sont possibles.
+
+function Banner({month}) {
+    return <div>
+    <h1>La maison jungle</h1>
+    <div>Nous sommes au printemps : c'est le moment idéal pour rempoter !</div>
+    </div>
+}
+
+function Banner({month}) {
+    return <div>
+    <h1>La maison jungle</h1>
+    {month > 1 && month < 6 && <div>Nous sommes au printemps : c'est le moment idéal pour rempoter !</div>
+    }
+    </div>
+}
+
+function Banner({month}) {
+    return <div>
+    <h1>La maison jungle</h1>
+    {month > 1 && month < 6 ? <div>Nous sommes au printemps : c'est le moment idéal pour rempoter !</div> : null
+    }
+    </div>
+}
+ 
+
+function Banner({month}) {
+    return <div>
+    <h1>La maison jungle</h1>
+        {if (month > 1 && month < 6) {
+        return (<div>Nous sommes au printemps : c'est le moment idéal pour rempoter !</div>
+        )
+        }}
+    </div>
+}
+L’option 1 ne présente aucune condition : cela ne fonctionne pas.
+
+La dernière option utilise une fonction  if   pour donner des instructions, sauf qu'en JSX, il s'agit d'expressions. La dernière option n'est donc pas valide.
+
+En revanche, les options 2 et 3 utilisent respectivement la syntaxe  &&   et le ternaire qui utilise  null  . Elles sont des réponses valides pour créer une condition  si… alors...   !
+
+Question 7
+Vous avez un jeu de donnés qui a le format suivant :
+
+{
+
+    id: "1fjgd4sm4",
+
+    plantName: "Calathea Rattlesnake",
+
+    plantDescription: "les jolies couleurs de cette plante sauront vous ravir"
+
+}
+Quelle est la meilleure prop key que vous puissiez utiliser ?
+
+
+L'index de la position de chaque élément du tableau.
+
+id
+
+plantDescription
+
+J'utilise la fonction Math.random().
+La prop key doit être unique au sein du tableau et stable dans le temps (pour la même donnée source, on aura toujours la même valeur de key=).
+
+L'index de la position de chaque élément peut être utilisé, si nous n'avons pas d'alternative. Mais c’est un dernier recours et nous avons une meilleure option dans les réponses.
+
+En revanche, utiliser toute la description ne paraît pas judicieux : il n'y a aucune garantie que chaque description soit unique. La réponse 3 ne marche pas.
+
+Pour des soucis de performance, on évitera d'utiliser la fonction  Math.random() qui pourrait troubler React.
+
+La meilleure option est toujours d'utiliser l'id natif aux données. La bonne réponse est donc la réponse 2. ✨
+
+Question 8
+Vous voulez créer une interaction avec votre bouton. Vous avez donc écrit le code suivant :
+
+<button onclick=handleClick>Cliquez moi ⭐️</button>
+Ça n'a pas l'air de marcher… Que faut-il modifier ?
+
+Attention, plusieurs réponses sont possibles.
+
+onclickn'est pas en camelCase. Il aurait fallu écrireonClick.
+
+La fonction n'est pas appelée. Pour que ça fonctionne, il faudrait écrirehandleClick().
+
+Il manque les accolades.
+
+Il aurait fallu préciser la fonction à appeler dans une string :onclick="handleClick()".
+Ici la réponse 2 ne correspond à aucune syntaxe connue en Javascript. 
+
+La réponse 4, quant à elle, correspond à la syntaxe du Javascript vanilla (sans framework), mais pas à React. 
+
+Les événements en React s'écrivent en camelCase et on leur précise la fonction à appeler entre accolades. Les bonnes réponses étaient donc la 1 et la 3.
+
+Question 9
+Pourquoi utiliser un formulaire contrôlé ?
+
+Attention, plusieurs réponses sont possibles.
+
+Il s'agit de la méthode conseillée par React.
+
+Ils permettent de filtrer le contenu.
+
+On peut facilement afficher un message d'erreur en fonction de la data entrée par l'utilisateur.
+
+Il s'agit de la seule manière de créer un formulaire.
+Ici, il n'y avait qu'une seule mauvaise réponse : la dernière option.
+
+En effet, il existe plusieurs manières de créer un formulaire, avec la méthode des composants contrôlés et des composants non contrôlés. Les bonnes réponses étaient donc la 1, la 2 et la 3.
+
+Question 10
+Vous avez un composant Header. Vous voulez que son texte soit rouge.
+Vous avez également un fichier CSS associé défini de la manière suivante :
+
+.my-header {
+    color: red;
+}
+Quelle(s) solution(s) fonctionne(nt) ?
+
+Attention, plusieurs réponses sont possibles.
+
+function Header() {
+    <h1 class='my-header'></h1>
+}
+
+function Header() {
+    <h1 className='my-header'></h1>
+}
+
+function Header() {
+    <h1 style='my-header'></h1>
+}
+
+function Header() {
+    return (
+        <h1 style={{ color: 'red' }}>Titre de l'en-tête</h1>
+    );
+}
+
+Les classes sont l’une des manières d’ajouter du style à un composant. classétant un mot réservé en JavaScript, il faut utiliser l’attribut classNamepour utiliser une classe dans un composant. La réponse 1 ne marche donc pas en React, mais la 2e réponse fonctionne bien.
+
+Par ailleurs, l'attribut style  fait également partie des méthodes possibles. Mais pour qu'il fonctionne, il faut passer un objet à style, contrairement à la réponse 3. Les bonnes réponses sont donc la 2 et la 4. 🎉
+
+        ****************************************** III *****************************************
+        Voici les réponses et explications pour chaque question :
+
+Question 1 : Identifiez la phrase incorrecte
+Réponse : "On met à jour notre state en faisant useState(nouvelleValeur)"
+
+Explication : La mise à jour du state se fait via la fonction de mise à jour (par exemple, setState ou updateState), et non en appelant à nouveau useState. La syntaxe correcte pour mettre à jour le state serait quelque chose comme setState(nouvelleValeur).
+
+Question 2 : Quelle(s) syntaxe(s) vous permet(tent) de récupérer et updater votre state
+Réponses :
+
+const [cartValue, updateCartValue] = useState(0)
+const cartState = useState(0); const cartValue = cartState[0]; const updateCartValue = cartState[1];
+Explication : Ces deux syntaxes sont correctes pour déclarer un state et le mettre à jour. La première utilise la déstructuration, ce qui est plus commun, tandis que la deuxième utilise une approche plus verbeuse.
+
+Question 3 : Quelles affirmations sont vraies ?
+Réponses :
+
+"Les hooks n'existaient pas aux débuts de React"
+"Un hook est une fonction qui permet de « se brancher » (to hook up) sur des fonctionnalités React"
+Explication : Les hooks ont été introduits dans React 16.8 et n'existaient pas à ses débuts. Un hook est effectivement une fonction qui permet d'accéder à des fonctionnalités comme l'état ou le cycle de vie des composants. useEffect et useState sont deux hooks populaires, mais il en existe d'autres. Il n'existe pas de package react-hooks spécifique, et il est également possible de créer des hooks personnalisés.
+
+Question 4 : Vous voulez partager une variable d'état entre plusieurs composants
+Réponses :
+
+"Faire remonter ces données vers le state local du plus proche composant qui est un ancêtre commun"
+"Faire redescendre ces infos avec des props jusqu’aux composants qui en ont besoin"
+"Faire « remonter » les demandes d'update en utilisant la fonction de mise à jour du state"
+Explication : Pour partager un état entre plusieurs composants, l'état doit être maintenu dans le composant ancêtre commun le plus proche. Ensuite, cet état peut être passé en tant que prop aux composants enfants. Pour mettre à jour cet état, les composants enfants doivent utiliser la fonction de mise à jour passée depuis le parent. Il n'est pas nécessaire de déclarer plusieurs variables de state dans chaque composant.
+
+Question 5 : Quelles règles concernant useEffect sont exactes ?
+Réponses :
+
+"useEffect doit toujours être appelé depuis un composant fonction"
+"Il faut toujours appeler useEffect au niveau racine de votre composant, sans l'inclure dans une condition, une fonction imbriquée ou une boucle"
+Explication : useEffect doit toujours être appelé dans une fonction de composant et ne doit pas être placé à l'intérieur de boucles, conditions ou fonctions imbriquées. Cependant, il est tout à fait possible d'avoir plusieurs useEffect dans un même composant, et vous pouvez utiliser le state dans un useEffect.
+
+Question 6 : Où est-ce que vous devez écrire votre alerte ?
+Réponse : function Welcome() { useEffect(() => { alert('Welcome! ☀️') }, []) return <div>Welcome</div> }
+
+Explication : L'alerte doit être placée dans un hook useEffect avec un tableau de dépendances vide [] pour s'exécuter uniquement lors du premier rendu (c'est-à-dire lorsque le composant est monté).
+
+Question 7 : Si vous voulez déclencher une alerte après la mise à jour du panier
+Réponse : function Cart() { useEffect(() => { alert(\Mon panier contient ${cart} éléments`) }, [cart]) return (<div> <h2>Mon panier</h2> {cart} <button onClick={() => updateCart(cart+1)}>Ajouter un élément au panier</button> </div>) }`
+
+Explication : Vous devez utiliser useEffect avec cart comme dépendance pour déclencher l'alerte uniquement lorsque le state cart change.
+
+Question 8 : Meilleure manière d’écrire votre fichier App.js pour gérer l'état global du panier
+Réponse : function App() { const [cartValue, updateCartValue] = useState(0) return <div> <Header cartValue={cartValue} /> <Cart cartValue={cartValue} updateCartValue={updateCartValue} /> <Footer cartValue={cartValue} /> </div> }
+
+Explication : Vous devez lever l'état (lifting state) au niveau du composant parent App et passer les valeurs de cartValue et updateCartValue aux composants enfants Header et Cart via les props. Cela permet au Header de réagir aux changements du panier.
